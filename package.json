@@ -1,13 +1,23 @@
 {
 	"name": "vector_studio",
-	"version": "0.1.0",
-	"description": "Servicios sobre arreglo de datos basados en WebSockets y JSON",
 	"author": "Alan Badillo Salas",
+	"description": "Servicios sobre arreglo de datos basados en WebSockets y JSON",
+	"version": "0.0.1",
 	"dependencies": {
-		
+		"websocket": "^1.0.22"
 	},
-	"bin": {
-		"vector_studio": "./bin/vector_studio"
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/badillosoft/vector_studio.git"
 	},
-	"main": "./lib/vector_studio"
+	"keywords": [
+		"vectors",
+		"parallel",
+		"websokets"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/badillosoft/vector_studio/issues"
+	}
 }
