@@ -4,7 +4,8 @@
 	"description": "Servicios sobre arreglo de datos basados en WebSockets y JSON",
 	"version": "0.0.1",
 	"dependencies": {
-		"websocket": "^1.0.22"
+		"websocket": "^1.0.22",
+		"paralleljs": "^0.2.1"
 	},
 	"main": "index.js",
 	"repository": {

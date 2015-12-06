@@ -102,7 +102,7 @@ el radio computado.
 		"var r = Math.sqrt($a.x *$a.x + $a.y * $a.y);",
 		"$a.r = r;",
 		"return $a;"
-	]
+	],
 	next: {
 		filter: "return $a.r <= 1.0;"
 	}
@@ -110,7 +110,7 @@ el radio computado.
 
 /* Salida */
 [
-	{x: 0.7, y: 0.3, r: 0.76157731}
+	{x: 0.7, y: 0.3, r: 0.76157731...}
 ]
 ~~~
 
@@ -158,7 +158,7 @@ aleatorios y se los pegamos a los datos de entrada.
 		"for (var i = 0; i < 4; i += 1) { $in.push(Math.random()); }",
 		"return $in;"
 	],
-	filter: "return $a >= 0.333 && $a <= 0.667;"
+	filter: "return $a >= 0.333 && $a <= 0.667;",
 	output: "return {data: $out, len: $out.length}"
 }
 
@@ -177,7 +177,7 @@ _map_, etc.
 
 ## Recursividad
 
-Podemos crear recursividad facilmente utilizando la variable _this_
+Podemos crear recursividad facilmente utilizando la variable _$self_
 que contiene el algorimo actual, los datos de entrada, seran
 los enviado para la nueva invocacion.
 
@@ -190,9 +190,9 @@ numero de Fibonacci.
 /* Algoritmo */
 {
 	data: 6,
-	eval: [
-		"if ($a <= 1) { return $a; }",
-		"return this.eval($a - 1) + this.eval($a - 2);"
+	call: [
+		"if ($a <= 1) { return 1; }",
+		"return $self.call($a - 1, $self) + $self.call($a - 2, $self);"
 	]
 }
 
@@ -220,8 +220,8 @@ primeros n numeros de Fibonacci que son pares.
 			"return $r.fibo($a - 1) + $r.fibo($a - 2);"
 		],
 		es_par: "return $a % 2 == 0;"
-	}
-	eval: [
+	},
+	call: [
 		"var out = [];",
 		"for (var i = 0; i < $a; i += 1) {",
 		"	if ($r.es_par($r.fibo(i))) { out.push(i); }",
