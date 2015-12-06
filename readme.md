@@ -216,15 +216,16 @@ primeros n numeros de Fibonacci que son pares.
 	data: 10,
 	register: {
 		fibo: [
-			"if ($a <= 1) { return $a; }",
-			"return $r.fibo($a - 1) + $r.fibo($a - 2);"
+			"if ($a <= 1) { return 1; }",
+			"return $self.$r.fibo($a - 1, $self) + $self.$r.fibo($a - 2, $self);"
 		],
 		es_par: "return $a % 2 == 0;"
 	},
 	call: [
 		"var out = [];",
 		"for (var i = 0; i < $a; i += 1) {",
-		"	if ($r.es_par($r.fibo(i))) { out.push(i); }",
+		"	var fi = $self.$r.fibo(i, $self)",
+		"	if ($self.$r.es_par(fi, $self)) { out.push(fi); }",
 		"}",
 		"return out;"
 	]
