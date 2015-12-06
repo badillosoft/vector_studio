@@ -177,7 +177,7 @@ _map_, etc.
 
 ## Recursividad
 
-Podemos crear recursividad facilmente utilizando la variable _$self_
+Podemos crear recursividad facilmente utilizando la variable _$s_
 que contiene el algorimo actual, los datos de entrada, seran
 los enviado para la nueva invocacion.
 
@@ -192,7 +192,7 @@ numero de Fibonacci.
 	data: 6,
 	call: [
 		"if ($a <= 1) { return 1; }",
-		"return $self.call($a - 1, $self) + $self.call($a - 2, $self);"
+		"return $s.call($a - 1, $s) + $s.call($a - 2, $s);"
 	]
 }
 
@@ -217,15 +217,15 @@ primeros n numeros de Fibonacci que son pares.
 	register: {
 		fibo: [
 			"if ($a <= 1) { return 1; }",
-			"return $self.$r.fibo($a - 1, $self) + $self.$r.fibo($a - 2, $self);"
+			"return $r.fibo($a - 1, $s) + $r.fibo($a - 2, $s);"
 		],
 		es_par: "return $a % 2 == 0;"
 	},
 	call: [
 		"var out = [];",
 		"for (var i = 0; i < $a; i += 1) {",
-		"	var fi = $self.$r.fibo(i, $self)",
-		"	if ($self.$r.es_par(fi, $self)) { out.push(fi); }",
+		"	var fi = $r.fibo(i, $s)",
+		"	if ($r.es_par(fi, $s)) { out.push(fi); }",
 		"}",
 		"return out;"
 	]
