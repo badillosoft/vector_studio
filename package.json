@@ -1,0 +1,13 @@
+{
+	"name": "vector_studio",
+	"version": "0.1.0",
+	"description": "Servicios sobre arreglo de datos basados en WebSockets y JSON",
+	"author": "Alan Badillo Salas",
+	"dependencies": {
+		
+	},
+	"bin": {
+		"vector_studio": "./bin/vector_studio"
+	},
+	"main": "./lib/vector_studio"
+}
