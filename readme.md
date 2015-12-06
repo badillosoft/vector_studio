@@ -17,7 +17,7 @@ los indices de los elementos y no el valor.
 
 > __JSON__ - Ejemplo de _filter_
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -30,7 +30,7 @@ los indices de los elementos y no el valor.
 
 > __JSON__ - Ejemplo de _ifilter_
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: [
@@ -57,7 +57,7 @@ El algoritmo _amap_ nos permite crear datos de diferente dimension.
 
 > __JSON__ - Ejemplo de _map_
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: [1, 2, 3, 4, 5],
@@ -70,7 +70,7 @@ El algoritmo _amap_ nos permite crear datos de diferente dimension.
 
 > __JSON__ - Ejemplo de _amap_
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: ["a", "l", "x", "h", "o"],
@@ -89,7 +89,7 @@ Podemos aplicar varios algoritmos de forma secuencial utilizando _next_.
 puntos contenidos en un radio unitario y devolver los datos incluyendo
 el radio computado.
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: [
@@ -121,7 +121,7 @@ resultados en un arreglo de datos utilizando _parallel_.
 
 > __JSON__ - Ejemplo de algoritmos en paralelo
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -150,7 +150,7 @@ o los datos globales (del _root_).
 > __JSON__ - Ejemplo de entrada. Generamos un arreglo de numeros
 aleatorios y se los pegamos a los datos de entrada.
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: [0.1, 0.5, 0.3, 0.9],
@@ -186,7 +186,7 @@ Para invocar un algoritmo podemos utilizar _map_ o _eval_.
 > __JSON__ - Ejemplo de recursividad. Obtenemos el n-esimo
 numero de Fibonacci.
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: 6,
@@ -210,7 +210,7 @@ Las funciones ya registradas seran sobreescritas.
 > __JSON__ - Ejemplo de registro de funciones. Devuelve los
 primeros n numeros de Fibonacci que son pares.
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: 10,
@@ -245,7 +245,7 @@ Los nombres son registrados a nivel _root_.
 > __JSON__ - Ejemplo de algoritmos nombrados. Creamos recursividad
 mediante un algoritmo nombrado.
 
-~~~json
+~~~js
 /* Algoritmo */
 {
 	data: [1, 3, 9, 2, 6, 1, 4],
